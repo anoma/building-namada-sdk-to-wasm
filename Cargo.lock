@@ -9,6 +9,17 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2cb2f989d18dd141ab8ae82f64d1a8cdd37e0840f73a406896cf5e99502fab61"
 
 [[package]]
+name = "async-trait"
+version = "0.1.60"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "677d1d8ab452a3936018a687b20e6f7cf5363d713b732b8884001317b0e48aa3"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
 name = "autocfg"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -40,9 +51,6 @@ name = "bytes"
 version = "1.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "dfb24e866b15a1af2a1b663f10c6b6b8f397a84aadb828f12e5b289ec23a3a3c"
-dependencies = [
- "serde",
-]
 
 [[package]]
 name = "cfg-if"
@@ -280,6 +288,7 @@ dependencies = [
 name = "namada_as_dependency"
 version = "0.1.0"
 dependencies = [
+ "getrandom",
  "tendermint-rpc",
 ]
 
@@ -397,9 +406,9 @@ dependencies = [
 
 [[package]]
 name = "prost"
-version = "0.11.5"
+version = "0.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c01db6702aa05baa3f57dec92b8eeeeb4cb19e894e73996b32a4093289e54592"
+checksum = "444879275cb4fd84958b1a1d5420d15e6fcf7c235fe47f053c9c2a80aceb6001"
 dependencies = [
  "bytes",
  "prost-derive",
@@ -407,9 +416,9 @@ dependencies = [
 
 [[package]]
 name = "prost-derive"
-version = "0.11.5"
+version = "0.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c8842bad1a5419bca14eac663ba798f6bc19c413c2fdceb5f3ba3b0932d96720"
+checksum = "f9cc1a3263e07e0bf68e96268f37665207b49560d98739662cdfaae215c720fe"
 dependencies = [
  "anyhow",
  "itertools",
@@ -420,9 +429,9 @@ dependencies = [
 
 [[package]]
 name = "prost-types"
-version = "0.11.5"
+version = "0.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "017f79637768cde62820bc2d4fe0e45daaa027755c323ad077767c6c5f173091"
+checksum = "534b7a0e836e3c482d2693070f982e39e7611da9695d4d1f5a4b186b51faef0a"
 dependencies = [
  "bytes",
  "prost",
@@ -568,8 +577,10 @@ dependencies = [
 
 [[package]]
 name = "tendermint"
-version = "0.28.0"
+version = "0.23.6"
+source = "git+https://github.com/memasdeligeorgakis/tendermint-rs.git?branch=feat/00_add_only_client_feature_flag#0ee29f11a213488a241a5a9cb591018487794320"
 dependencies = [
+ "async-trait",
  "bytes",
  "ed25519",
  "ed25519-dalek",
@@ -594,7 +605,8 @@ dependencies = [
 
 [[package]]
 name = "tendermint-config"
-version = "0.28.0"
+version = "0.23.6"
+source = "git+https://github.com/memasdeligeorgakis/tendermint-rs.git?branch=feat/00_add_only_client_feature_flag#0ee29f11a213488a241a5a9cb591018487794320"
 dependencies = [
  "flex-error",
  "serde",
@@ -606,7 +618,8 @@ dependencies = [
 
 [[package]]
 name = "tendermint-proto"
-version = "0.28.0"
+version = "0.23.6"
+source = "git+https://github.com/memasdeligeorgakis/tendermint-rs.git?branch=feat/00_add_only_client_feature_flag#0ee29f11a213488a241a5a9cb591018487794320"
 dependencies = [
  "bytes",
  "flex-error",
@@ -622,8 +635,10 @@ dependencies = [
 
 [[package]]
 name = "tendermint-rpc"
-version = "0.28.0"
+version = "0.23.6"
+source = "git+https://github.com/memasdeligeorgakis/tendermint-rs.git?branch=feat/00_add_only_client_feature_flag#0ee29f11a213488a241a5a9cb591018487794320"
 dependencies = [
+ "async-trait",
  "bytes",
  "flex-error",
  "getrandom",
@@ -632,10 +647,10 @@ dependencies = [
  "serde",
  "serde_bytes",
  "serde_json",
- "subtle",
  "subtle-encoding",
  "tendermint",
  "tendermint-config",
+ "tendermint-proto",
  "thiserror",
  "time",
  "url",
