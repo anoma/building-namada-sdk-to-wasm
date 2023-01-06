@@ -1,0 +1,22 @@
+mio v0.8.5
+└── tokio v1.23.1
+    ├── h2 v0.3.15
+    │   └── hyper v0.14.23
+    │       ├── hyper-proxy v0.9.1
+    │       │   └── tendermint-rpc v0.23.6 (https://github.com/heliaxdev/tendermint-rs.git?rev=e6c684731f21bffd89886d3e91074b96aee074ba#e6c68473)
+    │       │       └── namada v0.12.0 (https://github.com/anoma/namada?branch=mariari/shared-sdk-integration#8c039981)
+    │       │           └── namada_as_dependency v0.1.0 (/Users/memas/development4/26_namada_as_dependency_in_clean_project/namada_as_dependency)
+    │       ├── hyper-rustls v0.22.1
+    │       │   ├── hyper-proxy v0.9.1 (*)
+    │       │   └── tendermint-rpc v0.23.6 (https://github.com/heliaxdev/tendermint-rs.git?rev=e6c684731f21bffd89886d3e91074b96aee074ba#e6c68473) (*)
+    │       └── tendermint-rpc v0.23.6 (https://github.com/heliaxdev/tendermint-rs.git?rev=e6c684731f21bffd89886d3e91074b96aee074ba#e6c68473) (*)
+    ├── hyper v0.14.23 (*)
+    ├── hyper-proxy v0.9.1 (*)
+    ├── hyper-rustls v0.22.1 (*)
+    ├── namada v0.12.0 (https://github.com/anoma/namada?branch=mariari/shared-sdk-integration#8c039981) (*)
+    ├── tendermint-rpc v0.23.6 (https://github.com/heliaxdev/tendermint-rs.git?rev=e6c684731f21bffd89886d3e91074b96aee074ba#e6c68473) (*)
+    ├── tokio-rustls v0.22.0
+    │   ├── hyper-proxy v0.9.1 (*)
+    │   └── hyper-rustls v0.22.1 (*)
+    └── tokio-util v0.7.4
+        └── h2 v0.3.15 (*)
