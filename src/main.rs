@@ -1,10 +1,17 @@
-use tendermint_rpc_only_client::Client as TendermintClient;
+use tendermint_rpc_only_client::{Client as TendermintClient, SimpleRequest, Error};
 
-struct NamadaClient;
+struct NamadaWebClient;
 
-impl TendermintClient for NamadaClient {}
+#[async_trait::async_trait]
+impl TendermintClient for NamadaWebClient {
+    async fn perform<R>(&self, _request: R) -> Result<R::Response, Error>
+    where R: SimpleRequest {
+        // we have to utilise the sdk's Client trait implementation here
+        Err(Error::client_internal("just for testing".to_string()))
+    }
+}
 
 fn main() {
-    let _namada_client = NamadaClient;
+    let _namada_web_client = NamadaWebClient;
     println!("Hello, world!");
 }

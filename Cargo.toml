@@ -7,8 +7,13 @@ edition = "2021"
 
 [dependencies]
 getrandom = { version = "0.2", features = ["js"] }
+async-trait = "0.1.51"
 # namada = { git = "https://github.com/anoma/namada", branch = "mariari/shared-sdk-integration" }
 
 # trying out forked tendermint-rpc for getting Client without HttpClient
-tendermint-rpc = { git="https://github.com/memasdeligeorgakis/tendermint-rs.git", branch="feat/00_add_only_client_feature_flag", features = ["only-client"] }
+# tendermint-rpc = { git="https://github.com/memasdeligeorgakis/tendermint-rs.git", branch="feat/00_add_only_client_feature_flag", features = ["only-client"] }
+tendermint-rpc-only-client = { package = "tendermint-rpc", path = "/Users/memas/development4/29_heliax_memas_forked_terndermint_rs/tendermint-rs/rpc", features = [
+    "only-client",
+] }
 
+# tokio = { version = "1.0", default-features = false, features = ["time"] }
