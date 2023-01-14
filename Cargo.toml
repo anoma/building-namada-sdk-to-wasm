@@ -6,19 +6,10 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-#getrandom = { version = "0.2", features = ["js"] }
+getrandom = { version = "0.2", features = ["js"] }
 async-trait = "0.1.51"
-namada = { git = "https://github.com/anoma/namada", default-features = false, features = ["wasm-runtime", "ferveo-tpke", "abciplus", "tendermint-rpc"], rev = "1476b75" }
-#namada = { git = "https://github.com/anoma/namada", branch = "mariari/shared-sdk-integration" }
-#namada = { path = "../namada" }
-tendermint-rpc = {version = "0.23.6", features = ["http-client", "websocket-client"]}
-# trying out forked tendermint-rpc for getting Client without HttpClient
-# tendermint-rpc = { git="https://github.com/memasdeligeorgakis/tendermint-rs.git", branch="feat/00_add_only_client_feature_flag", features = ["only-client"] }
-#tendermint-rpc-only-client = { package = "tendermint-rpc", path = "/Users/memas/development4/29_heliax_memas_forked_terndermint_rs/tendermint-rs/rpc", features = [
-#    "only-client",
-#] }
-
-# tokio = { version = "1.0", default-features = false, features = ["time"] }
+namada = { git = "https://github.com/anoma/namada", branch = "murisi/shared-wasm", default-features = false, features = ["abciplus", "namada-sdk"] }
+tendermint-rpc = {version = "0.23.6", features = ["trait-client"], default-features = false}
 
 [patch.crates-io]
 # TODO temp patch for <https://github.com/near/borsh-rs/issues/82>, <https://github.com/near/borsh-rs/issues/84> and more tba.
@@ -36,13 +27,13 @@ async-process = {git = "https://github.com/heliaxdev/async-process.git", rev = "
 # borsh-schema-derive-internal = {path = "../borsh-rs/borsh-schema-derive-internal"}
 
 # patched to a commit on the `eth-bridge-integration+consensus-timeout` branch of our fork
-tendermint = {git = "https://github.com/heliaxdev/tendermint-rs.git", rev = "e6c684731f21bffd89886d3e91074b96aee074ba"}
-tendermint-config = {git = "https://github.com/heliaxdev/tendermint-rs.git", rev = "e6c684731f21bffd89886d3e91074b96aee074ba"}
-tendermint-proto = {git = "https://github.com/heliaxdev/tendermint-rs.git", rev = "e6c684731f21bffd89886d3e91074b96aee074ba"}
-tendermint-rpc = {git = "https://github.com/heliaxdev/tendermint-rs.git", rev = "e6c684731f21bffd89886d3e91074b96aee074ba"}
-tendermint-testgen = {git = "https://github.com/heliaxdev/tendermint-rs.git", rev = "e6c684731f21bffd89886d3e91074b96aee074ba"}
-tendermint-light-client = {git = "https://github.com/heliaxdev/tendermint-rs.git", rev = "e6c684731f21bffd89886d3e91074b96aee074ba"}
-tendermint-light-client-verifier = {git = "https://github.com/heliaxdev/tendermint-rs.git", rev = "e6c684731f21bffd89886d3e91074b96aee074ba"}
+tendermint = {git="https://github.com/heliaxdev/tendermint-rs.git", branch="murisi/trait-client"}
+tendermint-config = {git="https://github.com/heliaxdev/tendermint-rs.git", branch="murisi/trait-client"}
+tendermint-proto = {git="https://github.com/heliaxdev/tendermint-rs.git", branch="murisi/trait-client"}
+tendermint-rpc = {git="https://github.com/heliaxdev/tendermint-rs.git", branch="murisi/trait-client", default-features = false}
+tendermint-testgen = {git="https://github.com/heliaxdev/tendermint-rs.git", branch="murisi/trait-client"}
+tendermint-light-client = {git="https://github.com/heliaxdev/tendermint-rs.git", branch="murisi/trait-client"}
+tendermint-light-client-verifier = {git="https://github.com/heliaxdev/tendermint-rs.git", branch="murisi/trait-client"}
 
 # patched to a commit on the `eth-bridge-integration` branch of our fork
 ibc = {git = "https://github.com/heliaxdev/ibc-rs.git", rev = "f4703dfe2c1f25cc431279ab74f10f3e0f6827e2"}
