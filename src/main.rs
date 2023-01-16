@@ -1,4 +1,4 @@
-use tendermint_rpc_only_client::{Client as TendermintClient, SimpleRequest, Error};
+use tendermint_rpc::{Client as TendermintClient, SimpleRequest, Error};
 
 struct NamadaWebClient;
 
